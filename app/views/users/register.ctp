@@ -1,4 +1,4 @@
-<h2>Register Yourself</h2>
+<h2><?=__('Register Yourself',true);?></h2>
 
 <? if($session->read('Auth.User.id')) {?>
 	<p>
@@ -27,8 +27,8 @@
 
 	<?=$form->input('email', array('class' => 'large_input'));?>
 
-	<?=$form->input('secret', array('type' => 'password', 'label' => 'Password', 'class' => 'large_input'));?> 
+	<?=$form->input('secret', array('type' => 'password', 'label' => __('Password',true), 'class' => 'large_input'));?>
 	<?$recaptcha->display_form('echo');?>
-	<?=$form->end('Register');?>
+	<?=$form->end(__('Register',true));?>
 	</div>
 <? } ?>

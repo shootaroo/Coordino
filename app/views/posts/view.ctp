@@ -298,16 +298,16 @@
 	<div id="wmd-preview" class="wmd-panel"></div>
 
 	<? if(!$session->check('Auth.User.id')) { ?>
-	<h2>Who Are You?</h2>
-	<span class="quiet">Have an account already? <a href="/login">Login before answering!</a></span><br/>
-		<?=$form->label('name');?><br/>
+	<h2><?= __('Who Are You?',true) ?></h2>
+	<span class="quiet"><?= __('Have an account already?',true) ?> <a href="#"><?= __('Login before answering!',true) ?></a></span><br/>
+		<?=$form->label(__('Name',true));?><br/>
 		<?=$form->text('User.username', array('class' => 'big_input medium_input '));?><br/>
-		<?=$form->label('email');?><br/>
-		<?=$form->text('User.email', array('class' => 'big_input medium_input '));?><br/>		
+		<?=$form->label(__('Email',true));?><br/>
+		<?=$form->text('User.email', array('class' => 'big_input medium_input '));?><br/>
 	<? } ?>
 	
 	<?$recaptcha->display_form('echo');?>
 	
 	<br/>
-	<?=$form->end(__d('verb','Answer',true));?>
+	<?=$form->end(__('Answer',true));?>
 </div>
